@@ -5,6 +5,10 @@
 **Quelle:** https://www.youtube.com/watch?v=iTRZat7urvs
 **Datum gesehen:** 2026-06-07
 
+> **Status: Reines Wissen — nicht nutzbar auf Remys System**
+> 2KEY ist eine native Windows-App. Remy arbeitet auf macOS — die App selbst ist nicht einsetzbar.
+> Relevant als Inspiration für eigene Projekte und für die Claude Code Workflow-Tipps (Abschnitt unten).
+
 ---
 
 ## Was ist 2KEY?

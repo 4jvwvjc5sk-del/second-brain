@@ -91,5 +91,66 @@ let totalWordCount = 0;
 - Gapless Playback nicht möglich mit HTML5 Audio (kurze Lücke zwischen Chunks)
 - Kein Spam-Click-Debounce auf playBtn (Gemini empfohlen, aufgeschoben)
 
+## Stand 09.06.2026 — Logo-Fix Header + Offene Aufgaben
+
+### Header-Icon Fix
+Problem: Header-SVG (16×16) zeigte Kreis + Wellen = sah wie Mikrofon aus, nicht wie Linse.
+Fix: 4 Apertur-Linien (top/bottom/left/right) zum SVG in `index.html` hinzugefügt → eindeutig Linse.
+
+## Stand 09.06.2026 — sw.js v5 + GitHub Pages
+
+### sw.js Änderungen (CACHE lensreader-v5)
+- `CACHE` von `lensreader-v3` auf `lensreader-v5` gesetzt (deckt pendente v4 + Header-Fix ab)
+- `throw err` → `return Response.error()` im outer catch (Gemini-Audit: verhindert unhandled rejection im Browser)
+- Gemini-Analyse: bewusst NICHT übernommen: cache.addAll try/catch (all-or-nothing gewollt), Navigation cache.put (für Single-Page unkritisch), zwei separate Caches (Overkill)
+
+### GitHub Pages Setup
+- Repo: https://github.com/4jvwvjc5sk-del/lensreader (public)
+- Pages live: https://4jvwvjc5sk-del.github.io/lensreader/
+- VoiceReader/ als git repo initialisiert, alle 8 Dateien committed + gepusht (branch: main)
+- Deploy-Workflow für GitHub: `cd VoiceReader && git add . && git commit -m "..." && git push`
+
+### Deploy-Status
+- Netlify: https://resilient-figolla-46c92b.netlify.app/ (aktuell v3, braucht neuen Drag-&-Drop-Deploy für v5)
+- GitHub Pages: https://4jvwvjc5sk-del.github.io/lensreader/ (aktuell v5, live nach ~1 Min Build)
+
+## Stand 09.06.2026 — Azure TTS Migration (ElevenLabs → Azure)
+
+### Motivation
+ElevenLabs-Tokens aufgebraucht; Azure als günstigere Alternative mit vergleichbarer Qualität.
+- Azure `de-CH`/`de-DE` Neural Voices: 500K Zeichen/Monat gratis, dann ~$16/1M Zeichen
+- ElevenLabs war ~$300/1M Zeichen + hat keine de-CH Stimmen
+
+### Architektur-Änderungen
+- Azure Speech SDK via jsDelivr CDN (v1.42.0, versioniert/stabil)
+- SDK-URL: `https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk@1.42.0/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle-min.js`
+- `callEL()` → `callAzure(text, wordOffset)` — gibt `{ audioData: ArrayBuffer, timings, wordOffset }` zurück
+- Word-Timing: `synthesizer.wordBoundary` Events → `e.audioOffset / 10000000` = Sekunden
+- SSML Rate: `+50%`/`-20%` Format (nicht raw float 1.5) — Azure SSML Standard
+- 4 Stimmen: `de-CH-LeniNeural`, `de-CH-JanNeural`, `de-DE-KatjaNeural`, `de-DE-ConradNeural`
+- Settings: `az_key`, `az_region`, `az_voice` in localStorage (statt `el_api_key`)
+
+### Bekannte Einschränkungen
+- Word-Boundary Mapping: 1:1 Zuordnung Token→Azure-Event; kann bei Zahlen/Abkürzungen leicht driften
+- Subresource Integrity (SRI) für SDK-Script noch nicht gesetzt — TODO für spätere Version
+
+### Gemini-Audit Ergebnisse (behobene Bugs)
+- Memory Leak bei Cancel: catch-Block räumt immer auf (kein early return bei AbortError)
+- NaN Array Index: `parseInt(idx, 10)` + NaN-Check statt `+idx`
+- SSML Rate Format: `+50%` statt `"1.50"` (Standard-konform)
+- SSML Injection: `escapeXml()` auch auf `voiceName` und `lang` angewendet
+
+### User-Setup für Azure (erledigt 09.06.2026)
+- Azure Portal: TTS-Dienst = **"Spracherkennungsdienst"** (NICHT "Sprachdienst" — das ist NLP/Textanalyse)
+- Ressourcengruppe: `VoiceReader`, Region: **`switzerlandnorth`**, Tarif: F0 (kostenlos)
+- Key unter: Ressource öffnen → "Schlüssel und Endpunkt" → Schlüssel 1
+- **Wichtig**: Azure Speech SDK braucht `http://` — `file://` blockiert WebSocket (Fehler: StatusCode 1006)
+- Lokal testen: `python3 -m http.server 8000` → http://localhost:8000
+
+### Noch offen
+- Netlify neu deployen (Drag & Drop) mit v5-Cache und Azure-Version
+- SRI Hash für Azure SDK CDN hinzufügen (SHA384 berechnen)
+- Gemini MCP testen nach `enabledMcpjsonServers`-Fix
+
 ## Verbindungen
 - [[regeln]] — Coding-Workflow mit Gemini (PFLICHT)

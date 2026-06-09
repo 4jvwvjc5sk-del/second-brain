@@ -4,6 +4,9 @@
 
 Quelle: https://www.youtube.com/watch?v=hzzobM3sYpg
 
+> **Status: Reines Wissen — nicht umgesetzt (Stand: Juni 2026)**
+> Kein VPS aktiv, kein self-hosted n8n oder NocoDB. Dieses Dokument ist ein Wissens-Speicher, kein Abbild der laufenden Infrastruktur.
+
 ---
 
 ## Kernidee

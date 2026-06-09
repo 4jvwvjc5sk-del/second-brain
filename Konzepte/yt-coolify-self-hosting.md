@@ -4,6 +4,9 @@
 
 Quelle: https://www.youtube.com/watch?v=foMhJ4epafU (Harald, Serverkiwissen.de)
 
+> **Status: Reines Wissen — nicht umgesetzt (Stand: Juni 2026)**
+> Kein VPS aktiv, Coolify nicht installiert. Dieses Dokument ist ein Wissens-Speicher, kein Abbild der laufenden Infrastruktur.
+
 ---
 
 ## Was ist Coolify?

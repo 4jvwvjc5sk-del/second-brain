@@ -16,6 +16,8 @@ Maximal 1–2 MCP Server aktiv. Alle anderen deaktivieren.
 
 - `obsidian` — Zugriff auf Second Brain Vault
   `npx -y mcp-obsidian "/Users/remyzeindler/Desktop/AI/Claude/Obsidian/Claude Code"`
+- `gemini` — Text/Code-Completion, Deep Research, Code Review, Bildgenerierung (Imagen), Video (Veo), 30+ Tools
+  `npx -y @rlabs-inc/gemini-mcp` — API Key in `~/.claude/settings.json` als `GEMINI_API_KEY`
 
 ## API vs MCP
 

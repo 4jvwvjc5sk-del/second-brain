@@ -14,7 +14,8 @@ Claude liest nur was relevant ist — nicht alles auf einmal.
 |-------|--------|
 | [[regeln]] | Arbeitsregeln, Direktiven, Verhaltensvorgaben |
 | [[user-profil]] | Wer ist der User, Präferenzen, Kontext |
-| [[tools]] | API Keys, Tools, MCP Server Info |
+| [[tools]] | API Keys, MCP Server Info |
+| `Tools/` | Tool Know-How: NotebookLM, Gemini, GitHub, System-Setup |
 | [[workflows]] | Wiederkehrende Workflows & Prozesse |
 | [[10-tipps-umsetzung]] | Status der 10 Token-Spar-Tipps |
 | `Projekte/` | Ordner mit einem File pro Projekt |
@@ -30,6 +31,11 @@ Claude liest nur was relevant ist — nicht alles auf einmal.
 | [[Konzepte/yt-2key-windows-ai-app]] | 2KEY App: System-weites KI-Overlay + Claude Code Kontext-Tipps |
 | [[Konzepte/yt-coolify-self-hosting]] | Coolify auf Hetzner VPS: Installation, Wildcard-SSL, Docker-Deployments |
 | [[Konzepte/yt-self-hosting-docker-traefik]] | Self-Hosting mit Docker & Traefik: n8n/NocoDB auf eigenem VPS, DSGVO-konform |
+| [[Konzepte/yt-hermes-agent-vps]] | Hermes Agent (Nous Research): selbstlernender KI-Agent, richtige VPS-Installation |
+| [[Konzepte/yt-wko-kmu-ki]] | KI-Tools für Schweizer KMU/EPU: Tool-Vergleich (Euria, Copilot, ChatGPT), nDSG-Pflichten, ROI-Zahlen |
+| [[Konzepte/yt-wko-kmu-ki-recht]] | KI-Recht für Schweizer KMU/EPU: Copyright, nDSG, Haftung, EU AI Act, interne Richtlinien (WKO Folge 9) |
+| [[Konzepte/yt-cloud-storage-vergleich]] | Cloud Storage Vergleich 2024/2025: Preise/TB, Zero-Knowledge (Tresorit/pCloud/Filen/Sync.com), Cryptomator-Trick, Empfehlungen nach Nutzertyp, Schweizer KMU |
+| [[Konzepte/automatisierung-framework]] | Entscheidungsframework: regelbasiert vs. KI vs. Agent — wann was einsetzen |
 
 ## Wie mit dem Second Brain arbeiten
 1. Zu Beginn `00-START-HIER.md` lesen → du bist hier
