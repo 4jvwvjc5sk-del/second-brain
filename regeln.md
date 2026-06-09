@@ -22,6 +22,12 @@
 3. Erkenntnisse ins Second Brain schreiben
 4. Session beenden oder `/compact` nutzen
 
+## Session-Handover-Trigger (WICHTIG)
+Wenn der User "wo standen wir", "wo waren wir", "was war der plan", "ich gehe schlafen", "bis morgen", "mache eine pause" schreibt:
+- `naechste-session.md` lesen (falls vorhanden) → kurze Zusammenfassung ausgeben
+- Bei Session-Ende: `naechste-session.md` mit offenem Stand aktualisieren
+- Kein gesonderter Auftrag nötig — diese Regel gilt immer.
+
 ## Compact-Trigger (WICHTIG)
 Wenn der User "compact", "/compact" oder "komprimiere" schreibt:
 1. Zuerst: alle relevanten Erkenntnisse, Entscheidungen und Ergebnisse der aktuellen Session ins Second Brain schreiben (passendes File in `Projekte/` oder `regeln.md`)

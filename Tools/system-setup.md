@@ -34,6 +34,9 @@ Google\ Chrome --headless --print-to-pdf=<out.pdf> --print-to-pdf-no-header --no
 - `read -s` im Terminal funktioniert nicht zuverlässig → Secrets via Texteditor in Datei eintragen
 - TextEdit speichert als `.rtf` → Token-Extraktion: `strings <datei> | grep -oE 'ghp_[A-Za-z0-9_]+'`
 
+## Plugin-Updates
+Geänderte Plugin-Commands wirken erst in der **nächsten Session** — der Command wird beim Sessionstart geladen, nicht live aktualisiert.
+
 ## Verbindungen
 - [[Tools/github]] — GitHub ohne gh CLI
 - [[Projekte/]] — Projektspezifische Tool-Setups

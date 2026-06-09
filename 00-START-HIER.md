@@ -14,6 +14,7 @@ Claude liest nur was relevant ist — nicht alles auf einmal.
 |-------|--------|
 | [[regeln]] | Arbeitsregeln, Direktiven, Verhaltensvorgaben |
 | [[user-profil]] | Wer ist der User, Präferenzen, Kontext |
+| [[naechste-session]] | **Aktuelle Handover-Notiz** — falls vorhanden: zuerst lesen! |
 | [[tools]] | API Keys, MCP Server Info |
 | `Tools/` | Tool Know-How: NotebookLM, Gemini, GitHub, System-Setup |
 | [[workflows]] | Wiederkehrende Workflows & Prozesse |

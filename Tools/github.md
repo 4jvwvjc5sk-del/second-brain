@@ -34,5 +34,9 @@ Falls Token in TextEdit (`.rtf`) gespeichert:
 strings <datei.rtf> | grep -oE 'ghp_[A-Za-z0-9_]+'
 ```
 
+## Token erneuern (bei Push-Fehler "Invalid username or token")
+1. Neuen Classic Token auf github.com/settings/tokens generieren
+2. `git remote set-url origin https://<neuer-token>@github.com/4jvwvjc5sk-del/second-brain.git`
+
 ## Verbindungen
 - [[Tools/system-setup]] — Allgemeine System-Eigenheiten
