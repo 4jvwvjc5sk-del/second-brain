@@ -97,8 +97,9 @@
   }
 
   .ds-header-logo {
-    height: 56px;
+    max-height: 56px;
     width: auto;
+    max-width: 200px;
     filter: brightness(0) invert(1);
     object-fit: contain;
   }
@@ -304,8 +305,9 @@
   .btn-sm { font-size: 12px; padding: 6px 14px; }
   .btn-lg { font-size: 16px; padding: 14px 28px; border-radius: var(--radius-lg); }
 
-  .btn:disabled {
-    opacity: 0.4;
+  .btn:disabled,
+  .btn.disabled {
+    opacity: 0.6;
     cursor: not-allowed;
     transform: none !important;
     box-shadow: none !important;
@@ -400,7 +402,7 @@
   ═══════════════════════════════════════════ */
   .cards-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--space-5);
   }
 
