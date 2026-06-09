@@ -37,9 +37,21 @@ metadata:
 - 503 / fetch failed → Temporär nicht verfügbar; Fallback: WebSearch/WebFetch + User informieren
 - Quota erschöpft → selbst weitermachen, aber **explizit melden** dass Änderung ungeprüft ist
 
+## 503-Fehler Diagnose (wichtig)
+- `gemini-analyze-code` kann 503 liefern während `gemini-query` (flash/minimal) noch funktioniert
+- Diagnose-Reihenfolge: `gemini-query` mit `model:flash, thinkingLevel:minimal, prompt:"Antworte mit OK"` testen
+- Wenn query OK aber analyze-code 503: weiterversuchen — laut User ist Guthaben immer vorhanden, nur temporäre Auslastung
+- **PFLICHT**: Nie still aufgeben und auf Alternative wechseln — User will dass Gemini funktioniert; persistieren bis Erfolg
+
 ## YouTube-Summary Pattern
 - URL auf `?v=<id>` kürzen — Playlist-Parameter weg (`&list=`, `&index=`)
 - `style: detailed` für vollständige Analyse
+
+## YouTube-Fehler: INVALID_ARGUMENT
+- Ursache: Video copyright-gesperrt (z.B. freeCodeCamp) — auch Zeitabschnitte helfen nicht
+- Diagnose: Kontroll-Test mit anderem Video (`dQw4w9WgXcQ`) — schlägt das auch fehl → API-Problem; schlägt nur Original fehl → Video-spezifische Sperre
+- `gemini-analyze-url` mit `useGoogleSearch: true` ist **kein Ersatz** — liefert Trainingswissen, nicht Video-Inhalt
+- Korrekter Fallback: **NotebookLM** (`notebooklm source add "<youtube-url>"`) — kann dieselben Videos importieren
 
 ## Verbindungen
 - [[regeln]] — Coding-Workflow Detail
