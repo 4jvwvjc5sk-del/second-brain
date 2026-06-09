@@ -37,6 +37,7 @@ Claude liest nur was relevant ist — nicht alles auf einmal.
 | [[Konzepte/yt-wko-kmu-ki-recht]] | KI-Recht für Schweizer KMU/EPU: Copyright, nDSG, Haftung, EU AI Act, interne Richtlinien (WKO Folge 9) |
 | [[Konzepte/yt-cloud-storage-vergleich]] | Cloud Storage Vergleich 2024/2025: Preise/TB, Zero-Knowledge (Tresorit/pCloud/Filen/Sync.com), Cryptomator-Trick, Empfehlungen nach Nutzertyp, Schweizer KMU |
 | [[Konzepte/automatisierung-framework]] | Entscheidungsframework: regelbasiert vs. KI vs. Agent — wann was einsetzen |
+| [[Konzepte/yt-azure-az900-fundamentals]] | Azure AZ-900 Zertifizierungskurs (freeCodeCamp, 8h): Cloud Concepts, Compute, Storage, Security, Billing |
 
 ## Wie mit dem Second Brain arbeiten
 1. Zu Beginn `00-START-HIER.md` lesen → du bist hier
